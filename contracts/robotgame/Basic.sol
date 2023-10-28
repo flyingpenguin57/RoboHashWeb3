@@ -1,0 +1,89 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.21;
+
+import "./Ownable.sol";
+import "./RobotBasic.sol";
+import "./CommanderBasic.sol";
+
+//基础合约，定义基本的数据结构
+//创建commander；每天免费获取机器人
+contract Basic is Ownable, RobotBasic, CommanderBasic {
+
+    uint64 readyTime = 1 days; //通用的冷却时间，1天
+    uint randNonce = 0;
+
+    //随机函数
+    function randMod(uint modulus) internal returns(uint) {
+        randNonce ++;
+        return uint(keccak256(abi.encodePacked(block.timestamp, msg.sender, randNonce))) % modulus;
+    }
+
+    //这里是所有commander的信息
+    Commander[] public commanders;
+
+    //这里是所有机器人的信息
+    Robot[] public robots;
+
+    //所有者账号 => commander id
+    mapping(address => uint) public ownerToCommander;
+    //所有者账号 => commander数量
+    mapping(address => uint) public ownerCommanderCount;
+    //robot id => 所有者账号
+    mapping(uint => address) public robotToOwner;
+    //所有者账号 => 机器人数量
+    mapping(address => uint) public ownerRobotCount;
+
+    //修饰符，判断是不是机器人的主人
+    modifier ownerOfRobot(uint robotId) {
+        require(msg.sender == robotToOwner[robotId], "Not your robot.");
+        _;
+    }
+
+    event NewCommander(uint index, string name, string dna, address indexed owner);
+
+    event NewRobot(uint index, string name, string dna, uint spieces, address indexed owner);
+
+    //玩家进入游戏后，可以创建一个commander
+    function CreateCommander(string calldata name) public {
+        require(ownerCommanderCount[msg.sender] == 0, "Your commander already existed.");
+            
+        string memory dna = "randomString";
+
+        commanders.push(Commander(name, dna, uint64(block.timestamp), uint64(block.timestamp)));
+
+        uint index = commanders.length - 1;
+
+        ownerToCommander[msg.sender] = index;
+
+        ownerCommanderCount[msg.sender] = 1;
+
+        //触发事件
+        emit NewCommander(index, name, dna, msg.sender);
+    }
+
+    //创建机器人的函数
+    function CreateRobot() internal {
+
+        //the limitation of robots you can hold is 100
+        require(ownerRobotCount[msg.sender] <= 100, "Your repo is full.");
+        //get random spieces
+        uint8 spieces = uint8(randMod(2));
+        string memory dna = "randomString";
+        robots.push(Robot("noName", dna, spieces, 0, 0, 0));
+        uint index = robots.length - 1;    
+        robotToOwner[index] = msg.sender;
+        ownerRobotCount[msg.sender] ++;
+
+        emit NewRobot(index, "noName", dna, spieces, msg.sender);
+    }
+
+    //玩家每天可以获取一个免费机器人
+    function getFreeRobot() public {
+        //判断冷却是否完成
+        Commander storage commander = commanders[ownerToCommander[msg.sender]];
+        require(commander.getFreeRobotReadyTime <= block.timestamp, "Less than one day since last time you get a free robot.");
+        CreateRobot();
+        commander.getFreeRobotReadyTime = uint64(block.timestamp) + readyTime;
+    }
+
+}
