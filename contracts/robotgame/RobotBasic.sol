@@ -10,7 +10,8 @@ contract RobotBasic {
         uint8 spieces; //spieces 0 or 1
         uint8 status; //normal 0 on sale 1
         uint32 stars; 
-        uint   price; 
+        uint256 price; 
+        uint256 idInMarket;
     }
 
 }

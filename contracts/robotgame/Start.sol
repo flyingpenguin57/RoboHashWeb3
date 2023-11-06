@@ -5,11 +5,9 @@ import "./RobotManage.sol";
 import "./Gamble.sol";
 import "./Star.sol";
 import "./Trade.sol";
-import "./Erc721Impl.sol";
-
 //入口
-contract Start is RobotManage, Gamble, Star, Trade, Erc721Impl {
+contract Start is RobotManage, Gamble, Star, Trade {
     constructor() {
-        
+        commanders.push(Commander("init", "init", 0, 0));
     }
 }

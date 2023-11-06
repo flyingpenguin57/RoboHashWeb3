@@ -13,7 +13,7 @@ contract Star is Basic {
         Commander storage myCommander = commanders[ownerToCommander[msg.sender]];
         require(myCommander.giveStarReadyTime <= block.timestamp, "Less than one day since last time you give a star.");
         robots[robotId].stars++;
-        myCommander.giveStarReadyTime += readyTime;
+        myCommander.giveStarReadyTime += uint64(readyTime);
 
         //更新排行榜
         if (topRobots.length < 100) {
@@ -27,9 +27,9 @@ contract Star is Basic {
 
         //重新找出star数最小的
         if (topRobots.length == 100) {
-            uint minmumStarsIndex;
+            uint minmumStarsIndex = 0;
             for (uint i = 1; i <100; i++) {
-                if (robots[topRobots[i]].stars < robots[topRobots[0]].stars) {
+                if (robots[topRobots[i]].stars < robots[topRobots[minmumStarsIndex]].stars) {
                     minmumStarsIndex = i;
                 }
             }

@@ -19,8 +19,7 @@ contract RobotManage is Basic {
 
         require(msg.value == commonFee, "Please pay enough ether.");
 
-        address curaddr = msg.sender;
-        uint curCommanderIndex = ownerToCommander[curaddr];
+        uint curCommanderIndex = ownerToCommander[msg.sender];
         Commander storage curCommander = commanders[curCommanderIndex]; 
         curCommander.name = newName;
     }
@@ -30,8 +29,7 @@ contract RobotManage is Basic {
 
         require(msg.value == commonFee, "Please pay enough ether.");
 
-        address curaddr = msg.sender;
-        uint curCommanderIndex = ownerToCommander[curaddr];
+        uint curCommanderIndex = ownerToCommander[msg.sender];
         Commander storage curCommander = commanders[curCommanderIndex]; 
         curCommander.dna = newDna;
     }
@@ -51,7 +49,10 @@ contract RobotManage is Basic {
 
     //用户可以修改机器人的名字
     function setRobotName(uint robotId, string calldata newName) external payable ownerOfRobot(robotId) {
-        require(msg.value == commonFee, "Please pay enough ether.");
+        //第一次修改不要钱
+        if (keccak256(abi.encode(robots[robotId].name)) != keccak256(abi.encode("noName"))) {
+            require(msg.value == commonFee, "Please pay enough ether.");
+        }
         require(bytes(newName).length <= 20, "Robot name cannot exceed 20 characters.");
         robots[robotId].name = newName;
     }
