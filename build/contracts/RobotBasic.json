@@ -1,37 +1,37 @@
 {
   "contractName": "RobotBasic",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/robotgame/RobotBasic.sol\":\"RobotBasic\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/robotgame/RobotBasic.sol\":{\"keccak256\":\"0xc4d395c089477fbc37f7fc64e16697265122211418ad5dfb36eb303a4a847919\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://e048956667f87c0e1682d7baa28f115f9460a32a1d4b8959193dd882d1eb5cf1\",\"dweb:/ipfs/QmTVAmonrUodKaY81JrKAiWVEux9MYDu7UBqo4v7wSucq7\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600e575f80fd5b50603e80601a5f395ff3fe60806040525f80fdfea264697066735822122008155f3053289da84f13203e0b0b52e367bdd4555507eafb457dc1feb9827fbf64736f6c63430008150033",
-  "deployedBytecode": "0x60806040525f80fdfea264697066735822122008155f3053289da84f13203e0b0b52e367bdd4555507eafb457dc1feb9827fbf64736f6c63430008150033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/robotgame/RobotBasic.sol\":\"RobotBasic\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/robotgame/RobotBasic.sol\":{\"keccak256\":\"0x194c61ca5ca1a96d59f7a5eb5b3775744c279b3bbd4afe1be1d03f31aa9f85fa\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://9239dab49570519f5fcd1fd66cf4d8f89497764d25573e297b732008dba63623\",\"dweb:/ipfs/QmX5ejKBZKohGq3DqkUwKkp7tzMoumYdqFBwed7JrUB1DL\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122092b7df871c1ad59e637c8b7b1b853e1f98d8ed1f8fbd24d83b3f8cad76fc814964736f6c634300080d0033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122092b7df871c1ad59e637c8b7b1b853e1f98d8ed1f8fbd24d83b3f8cad76fc814964736f6c634300080d0033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "70:268:4:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "70:268:4:-:0;;;;;",
-  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.21;\n\n//robot\ncontract RobotBasic {\n\n    struct Robot {\n        string name; //name   \n        string dna;    //dna\n        uint8 spieces; //spieces 0 or 1\n        uint8 status; //normal 0 on sale 1\n        uint32 stars; \n        uint256 price; \n        uint256 idInMarket;\n    }\n\n}",
+  "sourceMap": "70:268:5:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "70:268:5:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.13;\n\n//robot\ncontract RobotBasic {\n\n    struct Robot {\n        string name; //name   \n        string dna;    //dna\n        uint8 spieces; //spieces 0 or 1\n        uint8 status; //normal 0 on sale 1\n        uint32 stars; \n        uint256 price; \n        uint256 idInMarket;\n    }\n\n}",
   "sourcePath": "/Users/liqinghao/Desktop/RoboHashWeb3/contracts/robotgame/RobotBasic.sol",
   "ast": {
     "absolutePath": "project:/contracts/robotgame/RobotBasic.sol",
     "exportedSymbols": {
       "RobotBasic": [
-        487
+        517
       ]
     },
-    "id": 488,
+    "id": 518,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 471,
+        "id": 501,
         "literals": [
           "solidity",
           "^",
           "0.8",
-          ".21"
+          ".13"
         ],
         "nodeType": "PragmaDirective",
-        "src": "36:24:4"
+        "src": "36:24:5"
       },
       {
         "abstract": false,
@@ -40,27 +40,27 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 487,
+        "id": 517,
         "linearizedBaseContracts": [
-          487
+          517
         ],
         "name": "RobotBasic",
-        "nameLocation": "79:10:4",
+        "nameLocation": "79:10:5",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "RobotBasic.Robot",
-            "id": 486,
+            "id": 516,
             "members": [
               {
                 "constant": false,
-                "id": 473,
+                "id": 503,
                 "mutability": "mutable",
                 "name": "name",
-                "nameLocation": "127:4:4",
+                "nameLocation": "127:4:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 486,
-                "src": "120:11:4",
+                "scope": 516,
+                "src": "120:11:5",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -68,10 +68,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 472,
+                  "id": 502,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "120:6:4",
+                  "src": "120:6:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -81,13 +81,13 @@
               },
               {
                 "constant": false,
-                "id": 475,
+                "id": 505,
                 "mutability": "mutable",
                 "name": "dna",
-                "nameLocation": "158:3:4",
+                "nameLocation": "158:3:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 486,
-                "src": "151:10:4",
+                "scope": 516,
+                "src": "151:10:5",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -95,10 +95,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 474,
+                  "id": 504,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "151:6:4",
+                  "src": "151:6:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -108,13 +108,13 @@
               },
               {
                 "constant": false,
-                "id": 477,
+                "id": 507,
                 "mutability": "mutable",
                 "name": "spieces",
-                "nameLocation": "186:7:4",
+                "nameLocation": "186:7:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 486,
-                "src": "180:13:4",
+                "scope": 516,
+                "src": "180:13:5",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -122,10 +122,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 476,
+                  "id": 506,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "180:5:4",
+                  "src": "180:5:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -135,13 +135,13 @@
               },
               {
                 "constant": false,
-                "id": 479,
+                "id": 509,
                 "mutability": "mutable",
                 "name": "status",
-                "nameLocation": "226:6:4",
+                "nameLocation": "226:6:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 486,
-                "src": "220:12:4",
+                "scope": 516,
+                "src": "220:12:5",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -149,10 +149,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 478,
+                  "id": 508,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "220:5:4",
+                  "src": "220:5:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -162,13 +162,13 @@
               },
               {
                 "constant": false,
-                "id": 481,
+                "id": 511,
                 "mutability": "mutable",
                 "name": "stars",
-                "nameLocation": "270:5:4",
+                "nameLocation": "270:5:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 486,
-                "src": "263:12:4",
+                "scope": 516,
+                "src": "263:12:5",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -176,10 +176,10 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 480,
+                  "id": 510,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "263:6:4",
+                  "src": "263:6:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint32",
                     "typeString": "uint32"
@@ -189,13 +189,13 @@
               },
               {
                 "constant": false,
-                "id": 483,
+                "id": 513,
                 "mutability": "mutable",
                 "name": "price",
-                "nameLocation": "294:5:4",
+                "nameLocation": "294:5:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 486,
-                "src": "286:13:4",
+                "scope": 516,
+                "src": "286:13:5",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -203,10 +203,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 482,
+                  "id": 512,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "286:7:4",
+                  "src": "286:7:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -216,13 +216,13 @@
               },
               {
                 "constant": false,
-                "id": 485,
+                "id": 515,
                 "mutability": "mutable",
                 "name": "idInMarket",
-                "nameLocation": "318:10:4",
+                "nameLocation": "318:10:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 486,
-                "src": "310:18:4",
+                "scope": 516,
+                "src": "310:18:5",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -230,10 +230,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 484,
+                  "id": 514,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "310:7:4",
+                  "src": "310:7:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -243,28 +243,27 @@
               }
             ],
             "name": "Robot",
-            "nameLocation": "104:5:4",
+            "nameLocation": "104:5:5",
             "nodeType": "StructDefinition",
-            "scope": 487,
-            "src": "97:238:4",
+            "scope": 517,
+            "src": "97:238:5",
             "visibility": "public"
           }
         ],
-        "scope": 488,
-        "src": "70:268:4",
-        "usedErrors": [],
-        "usedEvents": []
+        "scope": 518,
+        "src": "70:268:5",
+        "usedErrors": []
       }
     ],
-    "src": "36:302:4"
+    "src": "36:302:5"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.21+commit.d9974bed.Emscripten.clang"
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.4.16",
-  "updatedAt": "2023-11-06T02:21:21.319Z",
+  "updatedAt": "2023-11-06T05:47:35.843Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

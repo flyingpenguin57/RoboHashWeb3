@@ -1,4 +1,4 @@
-var RobotGame = artifacts.require("./robotgame/Start.sol");
+let RobotGame = artifacts.require("./robotgame/App.sol");
 module.exports = function(deployer) {
   deployer.deploy(RobotGame);
 };

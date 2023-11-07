@@ -26,12 +26,17 @@ module.exports = {
       },
 
       network_id: 5 //Fill in the `network_id` for the Rinkeby network.
+    },
+    development: {
+      host: "127.0.0.1",
+      port: 7545,
+      network_id: "*"
     }
   },
   
   compilers: {
     solc: {
-      version: "0.8.21",      
+      version: "0.8.13",      
     }
   },
 };

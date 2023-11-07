@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.21;
+pragma solidity ^0.8.13;
 
 import "./Ownable.sol";
 import "./RobotBasic.sol";
@@ -43,9 +43,13 @@ contract Basic is Ownable, RobotBasic, CommanderBasic {
 
     event NewRobot(uint id, string name, string dna, uint spieces, address indexed owner);
 
+    constructor() {
+        commanders.push(Commander("init", "init", 0, 0));
+    }
+
     //玩家进入游戏后，可以创建一个commander
     function CreateCommander(string calldata name) public {
-        require(ownerToCommander[msg.sender] != 0, "Your commander already existed.");
+        require(ownerToCommander[msg.sender] == 0, "Your commander already existed.");
             
         string memory dna = "randomString";
 
