@@ -25,13 +25,13 @@ contract RobotManage is Basic {
     }
 
     //用户可以修改commander的dna
-    function modifyCommanderDna(string calldata newDna) public payable {
+    function modifyCommanderDna(uint newDna) public payable {
 
         require(msg.value == commonFee, "Please pay enough ether.");
 
         uint curCommanderIndex = ownerToCommander[msg.sender];
         Commander storage curCommander = commanders[curCommanderIndex]; 
-        curCommander.dna = newDna;
+        curCommander.dna = uint64(newDna);
     }
 
     //获取所有机器人信息

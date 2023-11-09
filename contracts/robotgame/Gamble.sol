@@ -11,7 +11,7 @@ contract Gamble is Basic {
     //失败会失去筹码
     function gamble(uint choice, uint robotId) external ownerOfRobot(robotId) {
 
-        uint randInt = randMod(6) + 1;
+        uint randInt = block.timestamp % 6 + 1;
         uint res;
         if (randInt <=3 ) {
             res = 0;

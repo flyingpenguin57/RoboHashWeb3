@@ -10,13 +10,6 @@ import "./CommanderBasic.sol";
 contract Basic is Ownable, RobotBasic, CommanderBasic {
 
     uint readyTime = 1 days; //通用的冷却时间，1天
-    uint randNonce = 0;
-
-    //随机函数
-    function randMod(uint modulus) internal returns(uint) {
-        randNonce ++;
-        return uint(keccak256(abi.encodePacked(block.timestamp, msg.sender, randNonce))) % modulus;
-    }
 
     //这里是所有commander的信息
     Commander[] public commanders;
@@ -39,28 +32,26 @@ contract Basic is Ownable, RobotBasic, CommanderBasic {
         _;
     }
 
-    event NewCommander(uint id, string name, string dna, address indexed owner);
+    event NewCommander(uint id, string name, uint dna, address indexed owner);
 
-    event NewRobot(uint id, string name, string dna, uint spieces, address indexed owner);
+    event NewRobot(uint id, string name, uint64 dna, uint spieces, address indexed owner);
 
     constructor() {
-        commanders.push(Commander("init", "init", 0, 0));
+        commanders.push(Commander("init", 0, 0, 0));
     }
 
     //玩家进入游戏后，可以创建一个commander
     function CreateCommander(string calldata name) public {
         require(ownerToCommander[msg.sender] == 0, "Your commander already existed.");
-            
-        string memory dna = "randomString";
 
-        commanders.push(Commander(name, dna, uint64(block.timestamp), uint64(block.timestamp)));
+        commanders.push(Commander(name, uint64(block.timestamp), uint64(block.timestamp), uint64(block.timestamp)));
 
         uint id = commanders.length - 1;
 
         ownerToCommander[msg.sender] = id;
 
         //触发事件
-        emit NewCommander(id, name, dna, msg.sender);
+        emit NewCommander(id, name, uint64(block.timestamp), msg.sender);
     }
 
     //创建机器人的函数
@@ -69,14 +60,13 @@ contract Basic is Ownable, RobotBasic, CommanderBasic {
         //the limitation of robots you can hold is 100
         require(ownerRobotCount[msg.sender] <= 100, "Your repo is full.");
         //get random spieces
-        uint8 spieces = uint8(randMod(2));
-        string memory dna = "randomString";
-        robots.push(Robot("noName", dna, spieces, 0, 0, 0, 0));
+        uint8 spieces = uint8(block.timestamp % 2);
+        robots.push(Robot("noName", uint64(block.timestamp), spieces, 0, 0, 0, 0));
         uint id = robots.length - 1;    
         robotToOwner[id] = msg.sender;
         ownerRobotCount[msg.sender] ++;
 
-        emit NewRobot(id, "noName", dna, spieces, msg.sender);
+        emit NewRobot(id, "noName", uint64(block.timestamp), spieces, msg.sender);
     }
 
     //玩家每天可以获取一个免费机器人

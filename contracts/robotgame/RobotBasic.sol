@@ -6,7 +6,7 @@ contract RobotBasic {
 
     struct Robot {
         string name; //name   
-        string dna;    //dna
+        uint64 dna;    //dna
         uint8 spieces; //spieces 0 or 1
         uint8 status; //normal 0 on sale 1
         uint32 stars; 

@@ -1,29 +1,29 @@
 {
   "contractName": "CommanderBasic",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/robotgame/CommanderBasic.sol\":\"CommanderBasic\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/robotgame/CommanderBasic.sol\":{\"keccak256\":\"0x8ff7257784252010898ce582dc6bd6460ea0d76d15d5e54f4319001a3aad8bf3\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://cf8f96d042bab4aa2386ed0299ba9b5e2dca6802c74f16ea8dfc0dd2bb5bfde9\",\"dweb:/ipfs/QmbZTGzqMm6VxAXZqAR3XgEcGcJ7afuEtRTTGYA9WctQHX\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212203d7e7dd8c01876e96880240a8fbd2e2276afef74cd7af807791b253876326cb764736f6c634300080d0033",
-  "deployedBytecode": "0x6080604052600080fdfea26469706673582212203d7e7dd8c01876e96880240a8fbd2e2276afef74cd7af807791b253876326cb764736f6c634300080d0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/robotgame/CommanderBasic.sol\":\"CommanderBasic\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/robotgame/CommanderBasic.sol\":{\"keccak256\":\"0x4e002d1982d924ab0bf7777e7f1f31e46969af5aa9e9b73f302c6c1f3caa7bc1\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://1fa6d510fab52263db87dcb7b35b27c175e03f5c0e9cc7fb1b57eb85208abece\",\"dweb:/ipfs/QmbbGe5oHVST5G3QN55iXiYF3XF1mjTXhQ79rTEcFTwYYM\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220d9fbe1a78e68686b497a1778f0df97d5bae8c7eab698cae8df58ab4ea817e66f64736f6c634300080d0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220d9fbe1a78e68686b497a1778f0df97d5bae8c7eab698cae8df58ab4ea817e66f64736f6c634300080d0033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "74:254:2:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "74:254:2:-:0;;;;;",
-  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.13;\n\n//commander\ncontract CommanderBasic {\n    //one account can only have one commander.\n    struct Commander {\n        string name; //commander's name\n        string dna; //commander's dna\n        uint64 getFreeRobotReadyTime; \n        uint64 giveStarReadyTime;\n    }\n}",
+  "sourceMap": "74:254:5:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "74:254:5:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.13;\n\n//commander\ncontract CommanderBasic {\n    //one account can only have one commander.\n    struct Commander {\n        string name; //commander's name\n        uint64 dna; //commander's dna\n        uint64 getFreeRobotReadyTime; \n        uint64 giveStarReadyTime;\n    }\n}",
   "sourcePath": "/Users/liqinghao/Desktop/RoboHashWeb3/contracts/robotgame/CommanderBasic.sol",
   "ast": {
     "absolutePath": "project:/contracts/robotgame/CommanderBasic.sol",
     "exportedSymbols": {
       "CommanderBasic": [
-        313
+        707
       ]
     },
-    "id": 314,
+    "id": 708,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 303,
+        "id": 697,
         "literals": [
           "solidity",
           "^",
@@ -31,7 +31,7 @@
           ".13"
         ],
         "nodeType": "PragmaDirective",
-        "src": "36:24:2"
+        "src": "36:24:5"
       },
       {
         "abstract": false,
@@ -40,27 +40,27 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 313,
+        "id": 707,
         "linearizedBaseContracts": [
-          313
+          707
         ],
         "name": "CommanderBasic",
-        "nameLocation": "83:14:2",
+        "nameLocation": "83:14:5",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "CommanderBasic.Commander",
-            "id": 312,
+            "id": 706,
             "members": [
               {
                 "constant": false,
-                "id": 305,
+                "id": 699,
                 "mutability": "mutable",
                 "name": "name",
-                "nameLocation": "185:4:2",
+                "nameLocation": "185:4:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 312,
-                "src": "178:11:2",
+                "scope": 706,
+                "src": "178:11:5",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -68,10 +68,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 304,
+                  "id": 698,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "178:6:2",
+                  "src": "178:6:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -81,40 +81,13 @@
               },
               {
                 "constant": false,
-                "id": 307,
+                "id": 701,
                 "mutability": "mutable",
                 "name": "dna",
-                "nameLocation": "225:3:2",
+                "nameLocation": "225:3:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 312,
-                "src": "218:10:2",
-                "stateVariable": false,
-                "storageLocation": "default",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_string_storage_ptr",
-                  "typeString": "string"
-                },
-                "typeName": {
-                  "id": 306,
-                  "name": "string",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "218:6:2",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_storage_ptr",
-                    "typeString": "string"
-                  }
-                },
-                "visibility": "internal"
-              },
-              {
-                "constant": false,
-                "id": 309,
-                "mutability": "mutable",
-                "name": "getFreeRobotReadyTime",
-                "nameLocation": "263:21:2",
-                "nodeType": "VariableDeclaration",
-                "scope": 312,
-                "src": "256:28:2",
+                "scope": 706,
+                "src": "218:10:5",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -122,10 +95,10 @@
                   "typeString": "uint64"
                 },
                 "typeName": {
-                  "id": 308,
+                  "id": 700,
                   "name": "uint64",
                   "nodeType": "ElementaryTypeName",
-                  "src": "256:6:2",
+                  "src": "218:6:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint64",
                     "typeString": "uint64"
@@ -135,13 +108,13 @@
               },
               {
                 "constant": false,
-                "id": 311,
+                "id": 703,
                 "mutability": "mutable",
-                "name": "giveStarReadyTime",
-                "nameLocation": "302:17:2",
+                "name": "getFreeRobotReadyTime",
+                "nameLocation": "263:21:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 312,
-                "src": "295:24:2",
+                "scope": 706,
+                "src": "256:28:5",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -149,10 +122,37 @@
                   "typeString": "uint64"
                 },
                 "typeName": {
-                  "id": 310,
+                  "id": 702,
                   "name": "uint64",
                   "nodeType": "ElementaryTypeName",
-                  "src": "295:6:2",
+                  "src": "256:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 705,
+                "mutability": "mutable",
+                "name": "giveStarReadyTime",
+                "nameLocation": "302:17:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 706,
+                "src": "295:24:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 704,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "295:6:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint64",
                     "typeString": "uint64"
@@ -162,19 +162,19 @@
               }
             ],
             "name": "Commander",
-            "nameLocation": "158:9:2",
+            "nameLocation": "158:9:5",
             "nodeType": "StructDefinition",
-            "scope": 313,
-            "src": "151:175:2",
+            "scope": 707,
+            "src": "151:175:5",
             "visibility": "public"
           }
         ],
-        "scope": 314,
-        "src": "74:254:2",
+        "scope": 708,
+        "src": "74:254:5",
         "usedErrors": []
       }
     ],
-    "src": "36:292:2"
+    "src": "36:292:5"
   },
   "compiler": {
     "name": "solc",
@@ -182,7 +182,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.16",
-  "updatedAt": "2023-11-06T05:47:35.819Z",
+  "updatedAt": "2023-11-08T04:49:21.247Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
